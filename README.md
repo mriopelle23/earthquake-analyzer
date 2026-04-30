@@ -9,6 +9,10 @@
 
   https://earthquake-analyzer-877958cebd07.herokuapp.com/
 
+## Architecture Diagram
+
+![Architecture Diagram](Final-Earthquake-Diagram.png)
+
 ## **Project Rubric Mapping** ## 
 
 Where to find each requirement within my application on the 'A Level Work' rubric, included to assist the grader
