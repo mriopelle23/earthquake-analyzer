@@ -1,7 +1,7 @@
 from unittest.mock import MagicMock, patch
 import sys, os
 sys.path.insert(0, os.path.abspath("src"))
-from collector import app, db, Earthquake, save_earthquakes, fetch_earthquakes
+from src.collector import app, db, Earthquake, save_earthquakes, fetch_earthquakes
 
 #mock test
 def test_fetch_earthquakes_with_mock():

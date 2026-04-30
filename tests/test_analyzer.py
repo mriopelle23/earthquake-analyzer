@@ -1,7 +1,7 @@
 import sys, os
 sys.path.insert(0, os.path.abspath("src"))
-from collector import app, db, Earthquake
-from analyzer import get_earthquake_summary
+from src.collector import app, db, Earthquake
+from src.analyzer import get_earthquake_summary
 from datetime import datetime
 
 def test_analyzer_summary():

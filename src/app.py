@@ -2,8 +2,8 @@
 #Web application
 
 from flask import Flask, request
-from analyzer import get_earthquake_summary
-from collector import db, app as collector_app
+from src.analyzer import get_earthquake_summary
+from src.collector import db, app as collector_app
 from sqlalchemy import text
 
 request_count = 0
@@ -29,6 +29,10 @@ def main():
 
      <br>
      <a href="/report">View Earthquake Report</a>
+     <br><br>
+     <a href="/health">View Earthquake Analyzer Application Health</a>
+     <br><br>
+     <a href="/metrics">View Earthquake Analyzer Application Metrics</a>
      '''
 
 @app.route("/echo_user_input", methods=["POST"])

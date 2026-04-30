@@ -1,7 +1,7 @@
 import sys, os
 sys.path.insert(0, os.path.abspath("src"))
-from collector import app, db, Earthquake, save_earthquakes
-from analyzer import get_earthquake_summary
+from src.collector import app, db, Earthquake, save_earthquakes
+from src.analyzer import get_earthquake_summary
 
 def test_collector_database_analyzer_integration():
     mock_features = [

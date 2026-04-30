@@ -5,7 +5,7 @@ import requests
 from datetime import datetime
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from message_queue import publish_event
+from src.message_queue import publish_event
 
 app = Flask(__name__)
 #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///earthquakes.sqlite3"
@@ -15,7 +15,11 @@ INSTANCE_DIR = os.path.join(BASE_DIR, "instance")
 os.makedirs(INSTANCE_DIR, exist_ok = True)
 
 #Data persistence
-DB_PATH = os.path.join(INSTANCE_DIR, "earthquake.sqlite3")
+DB_PATH = os.environ.get(
+    "DATABASE_PATH",
+    os.path.join(INSTANCE_DIR, "earthquake.sqlite3")
+)
+print(f"Using database: {DB_PATH}")
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_PATH}"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 

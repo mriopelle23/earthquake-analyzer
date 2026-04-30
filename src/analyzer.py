@@ -1,7 +1,7 @@
 #data analyzer
 
-from collector import app, db, Earthquake
-from message_queue import consume_event
+from src.collector import app, db, Earthquake
+from src.message_queue import consume_event
 
 def get_earthquake_summary():
     earthquakes = Earthquake.query.all()
